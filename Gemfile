@@ -7,6 +7,11 @@ group :assets do
 end
 gem 'jquery-rails'
 gem "mongoid", ">= 3.0.19"
+gem "cancan", ">= 1.6.8"
+gem "rolify", ">= 3.2.0"
+gem "bootstrap-sass", ">= 2.3.0.0"
+gem "simple_form", ">= 2.0.4"
+gem "figaro", ">= 0.5.3"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "mongoid-rspec", ">= 1.6.0", :group => :test
