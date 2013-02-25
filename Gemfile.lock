@@ -116,6 +116,7 @@ GEM
     moped (1.4.2)
     multi_json (1.6.0)
     nokogiri (1.5.6)
+    oj (2.0.7)
     origin (1.0.11)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -222,6 +223,8 @@ DEPENDENCIES
   libv8 (>= 3.11.8)
   mongoid (>= 3.0.19)
   mongoid-rspec (>= 1.6.0)
+  nokogiri
+  oj
   quiet_assets (>= 1.0.1)
   rails (= 3.2.12)
   rolify (>= 3.2.0)

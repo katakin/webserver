@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Schedule::Application.load_tasks
+Webserver::Application.load_tasks

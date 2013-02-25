@@ -1,4 +1,7 @@
-Schedule::Application.routes.draw do
+Webserver::Application.routes.draw do
+  resources :weathers
+
+
   authenticated :user do
     root :to => 'home#index'
   end

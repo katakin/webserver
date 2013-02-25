@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Temp:</b>
+  <%= @weather.temp %>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @weather.descr %>
+</p>
+
+<p>
+  <b>Wind:</b>
+  <%= @weather.wind %>
+</p>
+
+<p>
+  <b>Wind direction:</b>
+  <%= @weather.wind_direction %>
+</p>
+
+<p>
+  <b>Barp:</b>
+  <%= @weather.barp %>
+</p>
+
+<p>
+  <b>Hum:</b>
+  <%= @weather.hum %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @weather.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_weather_path(@weather) %> |
+<%= link_to 'Back', weathers_path %>
