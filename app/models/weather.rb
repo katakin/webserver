@@ -1,7 +1,7 @@
 class Weather
   include Mongoid::Document
-  
-  field :temp, type: String
+  include Mongoid::Timestamps
+  field :temp, type: Integer
   field :descr, type: String
   field :wind, type: Integer
   field :wind_direction, type: String

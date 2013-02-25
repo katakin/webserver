@@ -7,14 +7,18 @@ class WeathersController < ApplicationController
     
     doc = Nokogiri::HTML(open("http://www.gismeteo.ru/city/daily/12917"))
 
-    @info = []
-    doc.css('h3.r > a.l').each do |data|
-      @info << data.content
-    end
+    info = []
+
+    info << doc.at_css('dd.value.m_temp.c').text[/.*\d+/]
+    info << doc.css('tr td').first.content
+    info << doc.at_css('dd.value.m_wind.ms').text[/[0-9]+/]
+    info << doc.css('dl.wicon dt').first.content
+    info << doc.at_css('dd.value.m_press.torr').text[/[0-9]+/]
+    info << doc.at_css('div.wicon.hum').text[/[0-9]+/]
 
     respond_to do |format|
       #format.html # index.html.erb
-      format.json { render json: Oj.dump(@info) }
+      format.json { render json: Oj.dump(info) }
     end
   end
 
