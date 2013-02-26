@@ -1,0 +1,31 @@
+<h1>Listing forecasts</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Temp day</th>
+    <th>Temp night</th>
+    <th>Descr day</th>
+    <th>Descr night</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @forecasts.each do |forecast| %>
+  <tr>
+    <td><%= forecast.date %></td>
+    <td><%= forecast.temp_day %></td>
+    <td><%= forecast.temp_night %></td>
+    <td><%= forecast.descr_day %></td>
+    <td><%= forecast.descr_night %></td>
+    <td><%= link_to 'Show', forecast %></td>
+    <td><%= link_to 'Edit', edit_forecast_path(forecast) %></td>
+    <td><%= link_to 'Destroy', forecast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Forecast', new_forecast_path %>

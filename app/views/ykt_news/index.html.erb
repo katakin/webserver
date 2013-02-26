@@ -1,0 +1,29 @@
+<h1>Listing ykt_news</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ykt_news.each do |ykt_news| %>
+  <tr>
+    <td><%= ykt_news.date %></td>
+    <td><%= ykt_news.title %></td>
+    <td><%= ykt_news.url %></td>
+    <td><%= ykt_news.image %></td>
+    <td><%= link_to 'Show', ykt_news %></td>
+    <td><%= link_to 'Edit', edit_ykt_news_path(ykt_news) %></td>
+    <td><%= link_to 'Destroy', ykt_news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ykt new', new_ykt_news_path %>

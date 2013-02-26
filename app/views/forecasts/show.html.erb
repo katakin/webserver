@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @forecast.date %>
+</p>
+
+<p>
+  <b>Temp day:</b>
+  <%= @forecast.temp_day %>
+</p>
+
+<p>
+  <b>Temp night:</b>
+  <%= @forecast.temp_night %>
+</p>
+
+<p>
+  <b>Descr day:</b>
+  <%= @forecast.descr_day %>
+</p>
+
+<p>
+  <b>Descr night:</b>
+  <%= @forecast.descr_night %>
+</p>
+
+
+<%= link_to 'Edit', edit_forecast_path(@forecast) %> |
+<%= link_to 'Back', forecasts_path %>

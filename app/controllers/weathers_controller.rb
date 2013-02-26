@@ -2,19 +2,11 @@ class WeathersController < ApplicationController
   # GET /weathers
   # GET /weathers.json
   def index
-    require 'open-uri'
-    require 'nokogiri'
-    
-    doc = Nokogiri::HTML(open("http://www.gismeteo.ru/city/daily/12917"))
-
-    @info = []
-    doc.css('h3.r > a.l').each do |data|
-      @info << data.content
-    end
+    @weathers = Weather.all
 
     respond_to do |format|
-      #format.html # index.html.erb
-      format.json { render json: Oj.dump(@info) }
+      format.html # index.html.erb
+      # format.json { render json: Oj.dump(@info) }
     end
   end
 

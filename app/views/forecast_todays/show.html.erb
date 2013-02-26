@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @forecast_today.date %>
+</p>
+
+<p>
+  <b>Temp day:</b>
+  <%= @forecast_today.temp_day %>
+</p>
+
+<p>
+  <b>Temp night:</b>
+  <%= @forecast_today.temp_night %>
+</p>
+
+<p>
+  <b>Temp evening:</b>
+  <%= @forecast_today.temp_evening %>
+</p>
+
+<p>
+  <b>Temp morning:</b>
+  <%= @forecast_today.temp_morning %>
+</p>
+
+<p>
+  <b>Descr day:</b>
+  <%= @forecast_today.descr_day %>
+</p>
+
+<p>
+  <b>Descr night:</b>
+  <%= @forecast_today.descr_night %>
+</p>
+
+<p>
+  <b>Descr evening:</b>
+  <%= @forecast_today.descr_evening %>
+</p>
+
+<p>
+  <b>Descr morning:</b>
+  <%= @forecast_today.descr_morning %>
+</p>
+
+
+<%= link_to 'Edit', edit_forecast_today_path(@forecast_today) %> |
+<%= link_to 'Back', forecast_todays_path %>

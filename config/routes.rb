@@ -1,4 +1,16 @@
 Webserver::Application.routes.draw do
+  resources :ykt_news
+
+
+  resources :forecasts
+
+
+  resources :forecast_todays
+
+
+  resources :prognozs
+
+
   resources :weathers
 
 
