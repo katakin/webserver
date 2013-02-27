@@ -1,4 +1,13 @@
 Webserver::Application.routes.draw do
+  resources :sessions
+
+
+  resources :companies
+
+
+  resources :events
+
+
   resources :horoscopes
   resources :ykt_news
   resources :forecasts
