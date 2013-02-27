@@ -25,3 +25,8 @@ every :hour do
   runner "Forecast.update_from"
   command 'echo "forecasts updated"'
 end
+
+every 30.minutes do
+	runner "YktNew.update_from"
+	command 'echo "yktnews updated"'
+end
