@@ -15,6 +15,7 @@ class WeathersController < ApplicationController
     info << doc.css('dl.wicon dt').first.content
     info << doc.at_css('dd.value.m_press.torr').text[/[0-9]+/]
     info << doc.at_css('div.wicon.hum').text[/[0-9]+/]
+    
 
     respond_to do |format|
       #format.html # index.html.erb

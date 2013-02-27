@@ -1,4 +1,7 @@
 Webserver::Application.routes.draw do
+  resources :horoscopes
+
+
   resources :weathers
 
 

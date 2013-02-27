@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sign:</b>
+  <%= @horoscope.sign %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @horoscope.desc %>
+</p>
+
+<p>
+  <b>Den:</b>
+  <%= @horoscope.den %>
+</p>
+
+
+<%= link_to 'Edit', edit_horoscope_path(@horoscope) %> |
+<%= link_to 'Back', horoscopes_path %>

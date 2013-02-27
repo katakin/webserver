@@ -1,0 +1,27 @@
+<h1>Listing horoscopes</h1>
+
+<table>
+  <tr>
+    <th>Sign</th>
+    <th>Desc</th>
+    <th>Den</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @horoscopes.each do |horoscope| %>
+  <tr>
+    <td><%= horoscope.sign %></td>
+    <td><%= horoscope.desc %></td>
+    <td><%= horoscope.den %></td>
+    <td><%= link_to 'Show', horoscope %></td>
+    <td><%= link_to 'Edit', edit_horoscope_path(horoscope) %></td>
+    <td><%= link_to 'Destroy', horoscope, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Horoscope', new_horoscope_path %>
