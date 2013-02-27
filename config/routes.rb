@@ -1,9 +1,9 @@
 Webserver::Application.routes.draw do
   resources :horoscopes
-
-
+  resources :ykt_news
+  resources :forecasts
+  resources :forecast_todays
   resources :weathers
-
 
   authenticated :user do
     root :to => 'home#index'

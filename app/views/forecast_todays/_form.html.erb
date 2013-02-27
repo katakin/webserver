@@ -1,0 +1,19 @@
+<%= simple_form_for(@forecast_today) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :date %>
+    <%= f.input :temp_day %>
+    <%= f.input :temp_night %>
+    <%= f.input :temp_evening %>
+    <%= f.input :temp_morning %>
+    <%= f.input :descr_day %>
+    <%= f.input :descr_night %>
+    <%= f.input :descr_evening %>
+    <%= f.input :descr_morning %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
