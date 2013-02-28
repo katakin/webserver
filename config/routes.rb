@@ -1,10 +1,6 @@
 Webserver::Application.routes.draw do
-  resources :sessions
-
-
+  #resources :sessions
   resources :companies
-
-
   resources :events
 
 
