@@ -6,20 +6,30 @@ class HoroscopesController < ApplicationController
     require 'nokogiri'
     info = []
 
-    vodoley = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/vodoley"))
-    info << vodoley.at_css('div.personal-horoscopes-tabs.yui3-u.tabs div').text.strip
-
-    #ryby = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/ryby"))
-    #oven = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/oven"))
-    #telets = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/telets"))
-    #bliznetsy = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/bliznetsy"))
-    #rak = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/rak"))
-    #lev = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/lev"))
-    #deva = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/deva"))
-    #vesy = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/vesy"))
-    #skorpion = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/skorpion"))
-    #strelets = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/strelets"))
-    #kozerog = Nokogiri::HTML(open("http://www.astrostar.ru/goroskopy/na-segodnya/kozerog"))
+    vodoley = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/aquarius/"))
+    info << vodoley.at_css('div.horo-body').text.strip
+    ryby = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/pisces/"))
+    info << ryby.at_css('div.horo-body').text.strip
+    oven = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/aries/"))
+    info << oven.at_css('div.horo-body').text.strip
+    telets = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/taurus/"))
+    info << telets.at_css('div.horo-body').text.strip
+    bliznetsy = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/gemini/"))
+    info << bliznetsy.at_css('div.horo-body').text.strip
+    rak = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/cancer/"))
+    info << rak.at_css('div.horo-body').text.strip
+    lev = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/leo/"))
+    info << lev.at_css('div.horo-body').text.strip
+    deva = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/virgo/"))
+    info << deva.at_css('div.horo-body').text.strip
+    vesy = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/libra/"))
+    info << vesy.at_css('div.horo-body').text.strip
+    skorpion = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/scorpio/"))
+    info << skorpion.at_css('div.horo-body').text.strip
+    strelets = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/sagittarius/"))
+    info << strelets.at_css('div.horo-body').text.strip
+    kozerog = Nokogiri::HTML(open("http://m.horoscopes.rambler.ru/capricorn/"))
+    info << kozerog.at_css('div.horo-body').text.strip
     
     respond_to do |format|
       #format.html # index.html.erb
