@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @ykt_session.date %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @ykt_session.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_ykt_session_path(@ykt_session) %> |
+<%= link_to 'Back', ykt_sessions_path %>

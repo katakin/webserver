@@ -5,5 +5,5 @@ class Company
 
   validates :name, presence: true
 
-  has_many :sessions
+  has_many :ykt_sessions
 end

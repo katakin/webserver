@@ -8,5 +8,5 @@ class Event
   validates :title, presence: true
   validates :desc, presence: true
 
-  has_many :sessions
+  has_many :ykt_sessions
 end

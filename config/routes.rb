@@ -1,8 +1,7 @@
 Webserver::Application.routes.draw do
-  #resources :sessions
-  resources :companies
+  resources :ykt_sessions
   resources :events
-
+  resources :companies
 
   resources :horoscopes
   resources :ykt_news
@@ -10,9 +9,9 @@ Webserver::Application.routes.draw do
   resources :forecast_todays
   resources :weathers
 
-  authenticated :user do
-    root :to => 'home#index'
-  end
+  # authenticated :user do
+  #   root :to => 'home#index'
+  # end
   root :to => "home#index"
   devise_for :users
   resources :users
