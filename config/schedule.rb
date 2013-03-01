@@ -30,3 +30,8 @@ every 30.minutes do
 	runner "YktNew.update_from"
 	command 'echo "yktnews updated"'
 end
+
+every 1.day, :at => '4:30' do
+  runner "Event.update_from"
+  command 'echo "events updated"'
+end
