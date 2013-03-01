@@ -20,8 +20,8 @@ set :output, "log/cron.log"
 
 # Learn more: http://github.com/javan/whenever
 
-every :hour do
-# every 1.minute do
+# every :hour do
+every 6.hours do
   runner "Forecast.update_from"
   command 'echo "forecasts updated"'
 end
