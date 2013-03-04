@@ -30,3 +30,8 @@ every 30.minutes do
 	runner "YktNew.update_from"
 	command 'echo "yktnews updated"'
 end
+
+every 1.days do
+	runner "Horoscope.update_from"
+	command 'echo "horoscopes updated"'
+end

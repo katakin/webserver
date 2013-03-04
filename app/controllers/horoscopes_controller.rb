@@ -3,13 +3,13 @@ class HoroscopesController < ApplicationController
   # GET /horoscopes.json
   def index
     @horoscopes = Horoscope.all
-
     respond_to do |format|
-      #format.html # index.html.erb
-      format.json { render json: Oj.dump((@horoscopes, :mode => :compat) }
+      format.html # index.html.erb
+      #format.json { render json: Oj.dump((@horoscopes, :mode => :compat) }
     end  
   end
 
+  
   # GET /horoscopes/1
   # GET /horoscopes/1.json
   # def show
