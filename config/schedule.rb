@@ -34,4 +34,8 @@ end
 every 1.day, :at => '18:30' do
   runner "Event.update_from"
   command 'echo "events updated"'
+
+every 1.days do
+	runner "Horoscope.update_from"
+	command 'echo "horoscopes updated"'
 end
