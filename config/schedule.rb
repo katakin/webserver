@@ -29,13 +29,21 @@ end
 every 30.minutes do
 	runner "YktNew.update_from"
 	command 'echo "yktnews updated"'
+
+	runner "Weather.update_from"
+	command 'echo "weather updated"'
 end
 
 every 1.day, :at => '18:30' do
   runner "Event.update_from"
   command 'echo "events updated"'
 
-every 1.days do
+every 1.day, :at => '18:00' do
 	runner "Horoscope.update_from"
 	command 'echo "horoscopes updated"'
+end
+
+every 7.days, :at => '20:00' do
+	runner "Weather.clean_db"
+	command 'echo "Database cleaned"'
 end

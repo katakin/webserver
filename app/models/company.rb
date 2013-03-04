@@ -1,4 +1,4 @@
-class Company
+dependent: :destroyclass Company
   include Mongoid::Document
   field :name, type: String
   field :url, type: String
@@ -6,5 +6,5 @@ class Company
 
   validates :name, presence: true
 
-  has_many :ykt_sessions
+  has_many :ykt_sessions, dependent: :destroy
 end

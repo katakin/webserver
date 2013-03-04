@@ -1,5 +1,6 @@
 class Event
   include Mongoid::Document
+  include Mongoid::Timestamps::Created
   field :image, type: String
   field :title, type: String
   field :desc, type: String
@@ -10,7 +11,7 @@ class Event
   validates :desc, presence: true
   validates :id, presence: true
 
-  has_many :ykt_sessions
+  has_many :ykt_sessions, dependent: :destroy
 
   def update_from
     require 'open-uri'
