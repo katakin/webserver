@@ -7,5 +7,5 @@ class Weather
   field :wind_direction, type: String
   field :barp, type: Integer
   field :hum, type: Integer
-  field :created_at, type: Time
+  field :created_at, type: Date
 end

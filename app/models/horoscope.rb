@@ -12,7 +12,7 @@ class Horoscope
 	field :libra, type: String
 	field :scorpio, type: String
 	field :sagittarius, type: String
-	field :den, type: Time
+	field :den, type: Date
 
 	index({ den: 1 }, { unique: true, background: true })
 
@@ -28,12 +28,13 @@ class Horoscope
 	validates :libra, presence: true
 	validates :scorpio, presence: true
 	validates :sagittarius, presence: true
+	validates :den, presence: true
 
-    def openhtml(url)
-    	# open url with exceptions
-    	failed = true
-    	begin
-    		html = open(url)
+	def openhtml(url)
+		# open url with exceptions
+		failed = true
+		begin
+			html = open(url)
 			failed = false                                                 
 			rescue OpenURI::HTTPError => e                                   
 				error_message = e.message                                      
@@ -46,53 +47,46 @@ class Horoscope
 				response_message = "Unknown error"
 		end                                                              
 		if failed
-	        html = []
-	    end
+			html = []
+		end
 
-      	return html
-    end
+		return html
+	end
 
-    def parse(znak)
-    	return znak.at_css('div.horo-body').text.strip
-    end
+	def parse(znak)
+		return znak.at_css('div.horo-body').text.strip
+	end
 
-   	def update_from
-   		require 'open-uri'
+	def update_from
+		require 'open-uri'
 		require 'nokogiri'
 
-   		znaki = ['capricorn','aquarius','pisces','aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius']
-   		horo_url = "http://m.horoscopes.rambler.ru/"
+		znaki = ['capricorn','aquarius','pisces','aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius']
+		horo_url = "http://m.horoscopes.rambler.ru/"
 
 		horoscopes = Horoscope.where(den: Time.now.to_date).first
-		update = true
-		if !horoscopes
-			horoscopes = Horoscope.new 
-			update = false
-		end
+
+		horoscopes = Horoscope.new if !horoscopes 
 		
-		if !update
-			znaki.each do |sign|
-				info = Nokogiri::HTML(openhtml(horo_url + sign))
-				horoscopes.send(sign+'=', parse(info))
-			end   
-			horoscopes.den = Time.now.to_date
-		end
+
+		znaki.each do |sign|
+			info = Nokogiri::HTML(openhtml(horo_url + sign))
+			horoscopes.send(sign+'=', parse(info))
+		end   
+		horoscopes.den = Time.now.to_date
+		
 		horoscopes.save
 
 		horoscopes1 = Horoscope.where(den: (Time.now.to_date + 1.day)).first
-		update1 = true
-		if !horoscopes1
-			horoscopes1 = Horoscope.new 
-			update1 = false
-		end
 		
-		if !update1
-			znaki.each do |sign|
-				info = Nokogiri::HTML(openhtml(horo_url + 'tomorrow/'+ sign))
-				horoscopes1.send(sign+'=', parse(info))
-			end   
-			horoscopes1.den = Time.now.to_date + 1.day
-		end
+		horoscopes1 = Horoscope.new if !horoscopes1 
+			
+		znaki.each do |sign|
+			info = Nokogiri::HTML(openhtml(horo_url + 'tomorrow/'+ sign))
+			horoscopes1.send(sign+'=', parse(info))
+		end   
+		horoscopes1.den = Time.now.to_date + 1.day
+		
 		horoscopes1.save
 	end
 end
