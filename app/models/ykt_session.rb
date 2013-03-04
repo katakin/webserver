@@ -1,6 +1,6 @@
 class YktSession
   include Mongoid::Document
-  include Mongoid::Timestamps
+  # include Mongoid::Timestamps
   field :date, type: Date
   field :body, type: String
 
