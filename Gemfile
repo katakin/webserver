@@ -38,7 +38,7 @@ gem "rolify", ">= 3.2.0"
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "simple_form", ">= 2.0.4"
 
-gem "figaro", ">= 0.5.3"
+# gem "figaro", ">= 0.5.3"
 gem "devise", ">= 2.2.3"
 
 gem 'oj'
