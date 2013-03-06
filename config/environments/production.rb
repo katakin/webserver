@@ -78,7 +78,7 @@ Webserver::Application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
-
+  config.assets.initialize_on_precompile = false
 
 
 end
