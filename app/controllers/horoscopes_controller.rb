@@ -5,7 +5,7 @@ class HoroscopesController < ApplicationController
     @horoscopes = Horoscope.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: Oj.dump((@horoscopes, :mode => :compat) }
+      format.json { render json: Oj.dump(@horoscopes, :mode => :compat) }
     end  
   end
 
