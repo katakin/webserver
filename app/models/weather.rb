@@ -70,7 +70,7 @@ class Weather
     hum = current.at_css('div.wicon.hum').text.to_i
 
     #time
-    time = current.at_css('span.icon.date')['data-obs-time'].to_datetime - 1.day
+    time = current.at_css('span.icon.date')['data-obs-time'].to_datetime
     # time = current.at_css('span.icon.date').text
     
     # info << temp
